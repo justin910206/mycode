@@ -13,6 +13,8 @@ while game_number < number_of_games:
 
   swapper.cheat()
   loaded_dice.cheat()
+
+
    #Remove # before print statements to see simulation running
    #Simulation takes approximately one hour to run with print
    #statements or ten seconds with print statements
@@ -42,4 +44,19 @@ if swapper_score == loaded_dice_score:
 elif swapper_score > loaded_dice_score:
   print("Swapper won most games")
 else:
-  print("Loaded dice won most games")
+  print("Loaded dice won most games")\
+
+class Cheat_Senescent_Pirate(Player):
+    def cheat(self):
+        print("Erm...let's see heare...")
+        newvalue= randint(-10,10)
+        newroll= randint(0,2)
+        if newvalue < 1:
+            print("Arggh, ye dunnit agin!")
+            self.dice[newroll] = newvalue
+        elif newvalue < 4:
+            print("Cor blimey mate!")
+            self.dice[newroll] = newvalue
+        else:
+            print("Scurvy-ridden timber flanks!")
+            self.dice[newroll] = newvalue
